@@ -4,6 +4,7 @@ import com.wt.testjenkins.resp.BaseResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +25,11 @@ public class Test1Controller {
     @ApiOperation(value = "测试get接口")
     public BaseResponse testGet() {
         return new BaseResponse(200, "success", "测试get接口");
+    }
+
+    @PostMapping("/test02")
+    @ApiOperation(value = "测试post接口")
+    public BaseResponse testPost() {
+        return new BaseResponse(200, "success", "测试post接口");
     }
 }
